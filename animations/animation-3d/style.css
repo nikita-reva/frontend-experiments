@@ -1,0 +1,22 @@
+html {
+	font-size: 62.5%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+	overflow: hidden;
+	background: url('https://i.pinimg.com/originals/ff/09/de/ff09deef4b50cc04325b502c4e79fed9.jpg');
+}
+
+.scene,
+canvas {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
