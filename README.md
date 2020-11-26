@@ -1,2 +1,2 @@
 # frontend-experiments
-This repository is a collection of frontend experiments. It includes various visual websites components and animations. I would like to use these elements in the future to create varied and unique user interfaces.
+This repository is a collection of visual website components and animation effects. I will use these elements in the future to create interactive and unique user interfaces.
