@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coca Cola Website Landing Page</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a class="logo" href="#"><img src="./images/logo.png" alt="logo"></a>
+            <div class="toggle" onclick="toggleMenu()"></div>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">What's new</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Taste the Feeling</h2>
+                <p id="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem dolorum asperiores id autem maiores repellat velit molestiae eaque nostrum cum, magni quaerat voluptate, quibusdam, rerum libero minus veritatis doloribus pariatur?</p>
+                <a href="#" id="learn-more-link">Learn More</a>
+            </div>
+        
+        <div class="imgBox">
+                <!-- Swiper -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/cocacola1.png" alt="coca-cola"></div>
+                        <div class="swiper-slide"><img src="./images/cocacola2.png" alt="coca-cola"></div>
+                        <div class="swiper-slide"><img src="./images/cocacola3.png" alt="coca-cola"></div>
+                        <div class="swiper-slide"><img src="./images/cocacola4.png" alt="coca-cola"></div>
+                        <div class="swiper-slide"><img src="./images/nikita-cola.png" alt="nikita-cola"></div>
+                        <div class="swiper-slide"><img src="./images/cocacola5.png" alt="coca-cola"></div>
+                        <div class="swiper-slide"><img src="./images/cocacola6.png" alt="coca-cola"></div>
+                        <div class="swiper-slide"><img src="./images/be-cola.png" alt="be-cola"></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+                </div>
+            </div>
+        </div>
+
+        <ul class="sci">
+            <li><a href="#"><img src="./images/facebook.png" alt="facebook"></a></li>
+            <li><a href="#"><img src="./images/twitter.png" alt="twitter"></a></li>
+            <li><a href="#"><img src="./images/instagram.png" alt="instagram"></a></li>
+        </ul>
+    </section>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const description = document.querySelector('#description');
+        const learnMoreLink = document.querySelector('#learn-more-link');
+
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+            rotate: 0,
+            stretch: -30,
+            depth: 200,
+            modifier: 1,
+            slideShadows: true,
+            },
+            pagination: {
+            el: '.swiper-pagination',
+            },
+            loop: true,
+            on: {
+                init: function () {
+                    updateDescription(0);
+                },
+            },
+        });      
+        
+        swiper.on('slideChange', function () { 
+            description.style.opacity = 0;
+            window.setTimeout(() => {
+                updateDescription(swiper.realIndex)
+            }, 200);
+        });
+
+        function updateDescription(slideIndex) {
+            description.style.opacity = 1;
+            switch(slideIndex) {
+                case 0:
+                    description.innerHTML = "This is a bottle of Coca Cola";
+                    learnMoreLink.href = "#plain-coke";
+                    break;
+                case 1:
+                    description.innerHTML = "This is a can of Orange Vanilla Coke with 0% sugar";
+                    learnMoreLink.href = "#orange-vanilla-coke";
+                    break;
+                case 2:
+                    description.innerHTML = "This is a can of Diet Coke";
+                    learnMoreLink.href = "#diet-coke";
+                    break;
+                case 3:
+                    description.innerHTML = "This is a can of Coca Cola Espresso";
+                    learnMoreLink.href = "#espresso-coke";
+                    break;
+                case 4:
+                    description.innerHTML = "This is a can of Nikita Cola";
+                    learnMoreLink.href = "#nikita-coke";
+                    break;
+                case 5:
+                    description.innerHTML = "This is a can of Vanilla Coke";
+                    learnMoreLink.href = "#vanilla-coke";
+                    break;
+                case 6:
+                    description.innerHTML = "This is a can Coca Cola Energy";
+                    learnMoreLink.href = "#coca-cola-energy";
+                    break;
+                case 7:
+                    description.innerHTML = "This is a can Body Extreme Cola";
+                    learnMoreLink.href = "#body-extreme-coke";
+                    break;
+            }
+        }
+        
+        function toggleMenu() {
+            const menuToggle = document.querySelector('.toggle');
+            const navigation = document.querySelector('.navigation');
+
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+
+
+    </script>
+</body>
+</html>

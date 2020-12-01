@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carousel-container {
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-slide {
+    width: 100%;
+    display: flex;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#prevBtn, #nextBtn {
+    top: 50%;
+    position: absolute;
+    font-size: 2rem;
+    color: #fff;
+    opacity: 0.5;
+    z-index: 10;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in;
+}
+
+#prevBtn{
+    left: 5%;
+}
+
+#nextBtn {
+    right: 5%;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+    opacity: 1;
+}

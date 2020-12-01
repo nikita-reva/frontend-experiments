@@ -42,7 +42,6 @@ function init() {
 
     container.appendChild(renderer.domElement);
 
-
     // Load model
 
     let loader = new THREE.GLTFLoader();
