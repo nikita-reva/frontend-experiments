@@ -143,6 +143,12 @@ header .navigation li a {
 
 /***** SLIDER *****/
 
+.content .imgBox {
+    width: 500px;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .swiper-container {
     width: 100%;
     padding-top: 50px;
@@ -158,17 +164,11 @@ header .navigation li a {
     justify-content: center;
 }
 
-.content .imgBox {
-    width: 500px;
-    display: flex;
-    justify-content: flex-end;
-}
-
 .content .imgBox img {
     max-width: 150px;
 }
 
-.swiper-slide img{
+.swiper-slide img {
     position: absolute;
     bottom: 0;
     max-height: 100%;
@@ -196,7 +196,6 @@ header .navigation li a {
         flex-direction: column;
     }
 
-    .content .textBox,
     .content .textBox {
         max-width: 100%;
     }
@@ -228,6 +227,10 @@ header .navigation li a {
         margin: 20px 0px;
     }
 
+    header .navigation li a {
+        margin-left: 0px;
+    }
+
     .toggle {
         position: relative;
         width: 30px;
@@ -246,5 +249,15 @@ header .navigation li a {
         background-size: 25px;
         background-repeat: no-repeat;
         background-position: center;
+    }
+}
+
+@media (max-width: 550px) {  
+    .content .imgBox {
+        width: 300px;
+    }
+
+    .swiper-slide {
+        height: 200px;
     }
 }
