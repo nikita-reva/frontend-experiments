@@ -1,0 +1,84 @@
+.console {
+	width: 80%;
+	margin: 0;
+	max-width: 500px;
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: nowrap;
+	left: 47.5%;
+	top: 70%;
+	transform: translateX(-50%);
+
+	.activator {
+		border-radius: 100%;
+		padding: 14px;
+		cursor: pointer;
+		background: rgb(31, 39, 63);
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+		z-index: 1;
+
+		&:hover {
+			background: rgb(33, 49, 83);
+		}
+	}
+
+	img {
+		width: 2em;
+		flex-shrink: 0.2;
+	}
+
+	nav {
+		width: 100%;
+		max-width: 250px;
+		display: flex;
+		padding: 10px;
+		justify-content: space-around;
+		background: rgb(33, 49, 83);
+		border-radius: 0 5em 5em 0;
+		clip-path: ellipse(50% 50% at -50% 50%);
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+		.btn {
+			text-transform: uppercase;
+			cursor: pointer;
+			font-size: inherit;
+			height: 40px;
+			padding: 0 20px;
+			color: #fff;
+			border: none;
+			border-radius: 20px;
+			background: #000;
+			transition: all 0.2s ease;
+			opacity: 0;
+			transform: translateX(-13%);
+		}
+
+		#reset:focus,
+		#start:focus {
+			outline: none;
+		}
+
+		#start:hover {
+			background: #51bed6;
+			color: #1e2e33;
+		}
+
+		#reset:hover {
+			background: #f04040;
+			color: #1e2e33;
+		}
+
+		#reset:active {
+			background: #f72929;
+			filter: drop-shadow(0 0 2px rgba(255, 180, 180, 0.7));
+		}
+
+		#start:active {
+			background: #2c7ad3;
+			filter: drop-shadow(0 0 2px rgba(180, 180, 255, 0.7));
+		}
+	}
+}
