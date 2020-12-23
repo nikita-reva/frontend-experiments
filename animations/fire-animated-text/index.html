@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fire Animated Text</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div class="text"><h2>Aniketos</h2></div>
+	</body>
+	<svg>
+		<filter id="fire">
+			<feTurbulence
+				id="turbulence"
+				baseFrequency="0.1 0.1"
+				numOctaves="3"
+				seed="3"
+			>
+				<animate
+					attributeName="baseFrequency"
+					dur="10s"
+					values="0.1 0.1;0.12 0.2"
+					repeatCount="indefinite"
+				></animate>
+			</feTurbulence>
+			<feDisplacementMap
+				in="SourceGraphic"
+				scale="15"
+			></feDisplacementMap>
+		</filter>
+	</svg>
+</html>
