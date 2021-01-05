@@ -3,56 +3,66 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Real Glassmorphism Cards</title>
-		<link rel="stylesheet" href="style.css" />
+		<title>Travel Landing Page</title>
+		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
-		<div class="container">
-			<div class="card">
-				<div class="content">
-					<h2>01</h2>
-					<h3>Quote One</h3>
-					<p>
-						"Always remember that you are absolutely unique. Just
-						like everyone else."
-					</p>
-					<small>- Margaret Mead</small>
-					<a href="#">Read More</a>
-				</div>
+		<header>
+			<h2 class="logo">Travel</h2>
+			<div class="toggle"></div>
+		</header>
+		<section class="showcase">
+			<video src="./explore.mp4" muted loop autoplay></video>
+
+			<div class="overlay"></div>
+
+			<div class="text">
+				<h2>Never Stop</h2>
+				<h3>Exploring The World</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+					delectus asperiores corporis nisi ullam hic, blanditiis et
+					voluptas quos! Accusantium.
+				</p>
+				<a href="#">Explore</a>
 			</div>
-			<div class="card">
-				<div class="content">
-					<h2>02</h2>
-					<h3>Quote Two</h3>
-					<p>
-						"Many of life's failures are people who did not realize
-						how close they were to success when they gave up."
-					</p>
-					<small>- Thomas A. Edison</small>
-					<a href="#">Read More</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="content">
-					<h2>03</h2>
-					<h3>Quote Three</h3>
-					<p>
-						"Tell me and I forget. Teach me and I remember. Involve
-						me and I learn."
-					</p>
-					<small>- Benjamin Franklin</small>
-					<a href="#">Read More</a>
-				</div>
-			</div>
+
+			<ul class="social">
+				<li>
+					<a href="#">
+						<img src="./facebook.png" alt="facebook" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./twitter.png" alt="twitter" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./instagram.png" alt="instagram" />
+					</a>
+				</li>
+			</ul>
+		</section>
+
+		<div class="menu">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">Destination</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
 		</div>
-		<script type="text/javascript" src="vanilla-tilt.js"></script>
-		<script type="text/javascript">
-			VanillaTilt.init(document.querySelectorAll('.card'), {
-				max: 15,
-				speed: 400,
-				glare: true,
-				'max-glare': 0.6,
-				reverse: true,
+
+		<script>
+			const menuToggle = document.querySelector('.toggle')
+			const showcase = document.querySelector('.showcase')
+
+			menuToggle.addEventListener('click', () => {
+				menuToggle.classList.toggle('active')
+				showcase.classList.toggle('active')
 			})
 		</script>
 	</body>
