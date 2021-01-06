@@ -8,7 +8,8 @@
 	</head>
 	<body>
 		<section>
-			<video src="./smoke.mp4" autoplay muted></video>
+			<video src="./smoke.mp4" muted></video>
+			<div class="overlay"></div>
 			<h1>
 				<span>A</span>
 				<span>N</span>
@@ -20,5 +21,28 @@
 				<span>S</span>
 			</h1>
 		</section>
+
+		<script>
+			const animSection = document.querySelector('section')
+			const smokeVideo = document.querySelector('video')
+			const spans = document.querySelectorAll('span')
+
+			animSection.addEventListener('click', () => {
+				spans.forEach((span) => {
+					span.classList.remove('run-animation')
+					void span.offsetWidth
+
+					span.classList.add('run-animation')
+				})
+
+				if (smokeVideo.paused) {
+					smokeVideo.play()
+				} else {
+					smokeVideo.pause()
+					smokeVideo.currentTime = 0
+					smokeVideo.play()
+				}
+			})
+		</script>
 	</body>
 </html>

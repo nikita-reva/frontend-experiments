@@ -3,66 +3,45 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Travel Landing Page</title>
+		<title>Smoke Reveal Text</title>
 		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
-		<header>
-			<h2 class="logo">Travel</h2>
-			<div class="toggle"></div>
-		</header>
-		<section class="showcase">
-			<video src="./explore.mp4" muted loop autoplay></video>
-
+		<section>
+			<video src="./smoke.mp4" muted></video>
 			<div class="overlay"></div>
-
-			<div class="text">
-				<h2>Never Stop</h2>
-				<h3>Exploring The World</h3>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-					delectus asperiores corporis nisi ullam hic, blanditiis et
-					voluptas quos! Accusantium.
-				</p>
-				<a href="#">Explore</a>
-			</div>
-
-			<ul class="social">
-				<li>
-					<a href="#">
-						<img src="./facebook.png" alt="facebook" />
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="./twitter.png" alt="twitter" />
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="./instagram.png" alt="instagram" />
-					</a>
-				</li>
-			</ul>
+			<h1>
+				<span>A</span>
+				<span>N</span>
+				<span>I</span>
+				<span>K</span>
+				<span>E</span>
+				<span>T</span>
+				<span>O</span>
+				<span>S</span>
+			</h1>
 		</section>
 
-		<div class="menu">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">News</a></li>
-				<li><a href="#">Destination</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</div>
-
 		<script>
-			const menuToggle = document.querySelector('.toggle')
-			const showcase = document.querySelector('.showcase')
+			const animSection = document.querySelector('section')
+			const smokeVideo = document.querySelector('video')
+			const spans = document.querySelectorAll('span')
 
-			menuToggle.addEventListener('click', () => {
-				menuToggle.classList.toggle('active')
-				showcase.classList.toggle('active')
+			animSection.addEventListener('click', () => {
+				spans.forEach((span) => {
+					span.classList.remove('run-animation')
+					void span.offsetWidth
+
+					span.classList.add('run-animation')
+				})
+
+				if (smokeVideo.paused) {
+					smokeVideo.play()
+				} else {
+					smokeVideo.pause()
+					smokeVideo.currentTime = 0
+					smokeVideo.play()
+				}
 			})
 		</script>
 	</body>
